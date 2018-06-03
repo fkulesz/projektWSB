@@ -1,0 +1,26 @@
+.jumbotron{
+    margin-top: 10px;
+    background-color :rgb(189, 212, 189);
+    border-style: solid;
+    border-color: green;  
+    animation: 2s alertAnim forwards;
+}
+
+.alert{
+    font-size: .9em;
+    display: inline-block;
+    animation: 2s alertAnim forwards;
+  }
+  
+  
+  @keyframes alertAnim{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+  
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }

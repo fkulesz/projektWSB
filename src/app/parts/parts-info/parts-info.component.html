@@ -1,0 +1,226 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-group">
+
+        <a class="list-group-item active main-color-bg" [ngStyle]="menuColors">PARTS</a>
+        <a routerLink="/parts/parts-info" routerLinkActive="active" class="list-group-item"> Parts Info</a>
+        <a routerLink="/parts/get-supersedings" routerLinkActive="active" class="list-group-item"> Get supersedings</a>
+        <a routerLink="/parts/get-superseded" routerLinkActive="active" class="list-group-item"> Get superseded</a>
+        <a routerLink="/parts/global-parts-locator" routerLinkActive="active" class="list-group-item"> Global Parts Locator</a>
+        <a routerLink="/parts/frequent-parts" routerLinkActive="active" class="list-group-item"> Frequent Parts </a>
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="panel panel-default">
+        <div class="panel-heading main-color-bg" [ngStyle]="menuColors">
+          <h2 class="panel-title">PARTS INFO </h2>
+        </div>
+        <div class="panel-body">
+
+
+          <div class="row">
+            <div class="col-lg-4">
+              <form class="form-horizontal" [formGroup]="rForm">
+                <div class="form-group">
+                  <label for="prefix1" class="control-label">Part Prefix: </label>
+
+
+                  <select (change)="selectPartPrefix($event.target.value)" class="form-control autotab" tabindex="1" id="prefix1" name="partPrefix">
+                    <option value="one">Select Part Prefix</option>
+                    <option *ngFor='let prefix of availablePartPrefix'>{{prefix}}</option>
+                  </select>
+                </div>
+                <!-- /.form-group -->
+
+                <div class="form-group">
+                  <label for="part" class="control-label">Part Number: </label>
+                  <input #prtnNo class="form-control autotab" type="text" maxlength="20" tabindex="2" id="part" formControlName="partNumber">
+                  <div class="alert alert-danger" *ngIf="!rForm.controls['partNumber'].valid && rForm.controls['partNumber'].touched">Part Number required!</div>
+
+                </div>
+
+                <div class="form-group">
+                  <label for='quantity' class="control-label">Quantity: </label>
+                  <input #qty class="form-control autotab" type="number" value="1" maxlength="4" tabindex="3" id='quantity'>
+
+                </div>
+                <div class="form-group">
+                  <label for="order1" class="control-label">Order Class:</label>
+                  <select (change)="selectOrder($event.target.value)" class="form-control autotab" tabindex="4" id="order1">
+                    <option value="one">Select Order Class</option>
+                    <option *ngFor='let orderclass of OrderClass'>{{orderclass}}</option>
+                  </select>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="container">
+                    <button (click)="getPartInfo('28040', selectedPartPrefix , prtnNo.value)" type="button" class="btn btn-primary btn-lg" [disabled]="!rForm.valid">GET PART INFO</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+
+            <!--  <div *ngIf="!name; else forminfo">
+                  <form [formGroup]= "rForm" (onSubmit)="addPost(rForm.value)">
+                    <div class="form-container">
+                      <div class="row columns">
+                        <h1> my reactive form</h1>
+
+                        <label> name 
+                          <input type="text" formControlName="name">
+                        </label>
+                        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{tittleAlert}}</div>
+
+                        <label> description 
+                            <textarea  formControlName="description"></textarea>
+                          </label>
+                          <div class="alert" *ngIf="!rForm.controls['description'].valid">Pomiedzy 30 a 500</div>
+
+                          <label for="validate"> Minimum od 3 characters </label> 
+                              <input type="checkbox" name="validate" formControlName="validate" value="1"> ON
+                            
+                          <input type= "submit" class=  "button expanded" value = "Submit Form" [disabled]="!rForm.valid">  
+                      </div>
+                    </div>
+                  </form>
+
+               </div>
+
+                <ng-template #forminfo>
+                  <div class="form-container">
+                    <div class= "row columns">
+                      <h1>
+                        {{ name }}
+                      </h1>
+                      <p>
+                        {{ description }}
+                      </p>
+                    </div>
+                  </div>
+                </ng-template>
+              -->
+
+
+            <div *ngIf="!infoActive;  else infoTemplate" class="col-lg-8">
+              <img src="./../../assets/Parts.jpg" style="margin-top: 30px" class="img-fluid rounded-circle" alt="img loading problem">
+
+            </div>
+            <ng-template #infoTemplate>
+                <div class="col-lg-8">
+
+              <div *ngIf="partInfo?.Retcd == 0;  else errorTemplate" class="jumbotron">
+                <h2> Part Number:
+                  <strong> {{partInfo?.Prtn}} </strong>
+                </h2>
+
+                <h3> Requested Quantity:
+                  <strong> {{ qty.value }} </strong>
+                </h3>
+                <h3> Available Quantity:
+                  <strong> 5 PCE</strong>
+                </h3>
+                <hr>
+                <ul class="list-unstyled text-left">
+                  <li>
+                    Description:
+                    <strong> {{partInfo?.Desc}}</strong>
+                  </li>
+                  <li> Order Conf Code:
+                    <strong> 43 QUANTITY ADAPTION,ORDERED QUANTITY ADJUSTED UPWARDS</strong>
+                  </li>
+
+                  <li>
+                    Requested Order Class:
+                    <strong *ngIf="selectedOrder"> {{selectedOrder}} </strong>
+                  </li>
+
+                  <li>
+                    WH:
+                    <strong>73- RUSSIA</strong>
+                  </li>
+
+                  <li>
+                    Adapted Quantity:
+                    <strong> 5 PCE</strong>
+                  </li>
+                  <li>
+                    Bulk Pack Quantity:
+                    <strong> 5 PCE</strong>
+                  </li>
+                  <li>
+                    Price per Unit (excl VAT):
+                    <strong> {{partInfo?.Prir}} {{partInfo?.Curc}}</strong>
+                  </li>
+                  <li>
+                    Total Price (excl VAT):
+                    <strong> {{partInfo?.PrirTax}} {{partInfo?.Curc}}</strong>
+                  </li>
+                  <li>
+                    Suggested Retail Price:
+                    <strong> {{partInfo?.Prir}} {{partInfo?.Curc}}</strong>
+                  </li>
+                  <li>
+                    Suggested Retail Price Tax:
+                    <strong> {{partInfo?.PrirTax}} {{partInfo?.Curc}}</strong>
+                  </li>
+                  <li>
+                    Net Weight:
+                    <strong> 5 G </strong>
+                  </li>
+                  <li>
+                    Volume:
+                    <strong>1,3 CM3</strong>
+                  </li>
+                  <li>
+                    Function Group:
+                    <strong> {{partInfo?.Fgrp}}</strong>
+                  </li>
+                  <li>
+                    Product Group:
+                    <strong>{{partInfo?.Prgr}}</strong>
+                  </li>
+                  <li>
+                    Country of origin :
+                    <strong>{{partInfo?.Orig}}</strong>
+                  </li>
+                  <li>
+                    Statistical Code:
+                    <strong>{{partInfo?.Trfn}} </strong>
+                  </li>
+                  <li data-toggle="collapse" data-target="#models">
+                    Suits Models: ...
+                    <strong id="models" class="collapse">{{partInfo?.ModKitArea}} </strong>
+                  </li>
+                </ul>
+              </div>
+
+              <ng-template #errorTemplate>        
+                <div class="alert alert-danger" role="alert">
+                  <h1>Ups! Part Number:  <strong> {{ selectedPartPrefix }} {{partInfo?.Prtn}} </strong> doesn't exist.</h1>
+                  <hr>
+                 <h3> Requested Quantity:
+                    <strong> {{ qty.value }} </strong>
+                  </h3>
+                  <h3> Available Quantity:
+                    <strong> 0 </strong>
+                  </h3>
+                </div>
+              </ng-template>
+            </div>
+
+            </ng-template>
+       
+       
+        </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

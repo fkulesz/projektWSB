@@ -1,0 +1,24 @@
+<div class="background-wrap">
+    <video  id="vid" preload="auto" preload="auto" autoplay="true" loop="loop" muted="muted">
+            <source src="/assets/movie.mp4" type="video/mp4">
+                Video not supported
+    </video>   
+</div>
+
+<div class="content">
+    <h1>PARTS ONLINE</h1>
+    <form (submit)="loginUser($event)">
+        <div class="input">
+          <label for="uname"> Username: </label>
+          <input type="text" id="uname"  >
+        </div>
+        <div class="input">
+            <label for="pwd"> Password: </label>
+            <input type="password" id="pwd" >
+          </div>
+          <div class="input">
+     <   <input type="submit" class="btn btn-success btn-lg" value="Login">
+      </div>
+      </form>
+   </div>
+

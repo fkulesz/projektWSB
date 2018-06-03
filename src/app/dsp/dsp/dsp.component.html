@@ -1,0 +1,447 @@
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+
+                    <a routerLink="/dsp/purchase-proposals" routerLinkActive="active" class="list-group-item active main-color-bg" [ngStyle]="menuColors">
+                        DSP
+                    </a>
+
+                    <a routerLink="/dsp/purchase-proposals" routerLinkActive="active" class="list-group-item">
+                       Purchase Proposals</a>
+
+                </div>
+            </div>
+          
+            <div class="col-md-9">
+
+<div class="panel panel-default">
+  <div class="panel-heading main-color-bg" [ngStyle]="menuColors">
+      <h2 class="panel-title">PURCHASE PROPOSALS </h2> 
+  </div>
+  <div class="panel-body">
+      <div class="row">
+          <div class="col-md-2">
+              <span class="label label-default">Part number:</span>
+          </div>
+          <div class="col-md-1">
+              <div class="btn-group dropup">
+
+                  <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">RT
+                      <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li>VOE</li>
+                      <li>VO</li>
+                      <li>VOP</li>
+                      <li>MK</li>
+                      <li>RU1</li>
+                      <li>TSE</li>
+                      <li>ZM</li>
+                  </ul>
+              </div>
+          </div>
+
+          <br>
+
+          <div class="col-md-9">
+
+              <input class="form-control" type="text" placeholder="Find proposal...">
+              <i class="form-control-feedback glyphicon glyphicon-search "></i>
+          </div>
+     
+      <br>
+      <table class="table table-responsive   table-striped table-hover">
+          <tr>
+              <th>Next</th>
+              <th>Tranasction Cust Ref</th>
+              <th>Status</th>
+              <th>PC</th>
+              <th>No.of.Lines</th>
+              <th>Value</th>
+              <th>Req Date YYYYMMDD</th>
+              <th>Rel Date YYYYMMDD</th>
+              <th>User ID</th>
+              <th>User Action</th>
+          </tr>
+          <tr>
+              <td>123456789</td>
+              <td>123456789</td>
+              <td>Cancel Pending</td>
+              <td>M</td>
+              <td>20</td>
+              <td>3018</td>
+              <td>20180127</td>
+              <td>0</td>
+              <td>A232684</td>
+              <td>
+                  <div class="btn-group btn-group-xs">
+                      <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-file"></i></a>
+
+                      <a class="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+
+                        </a>
+                     
+                  </div>
+              </td>
+          </tr>
+          <tr class="danger">
+              <td>123456789</td>
+              <td>123456789</td>
+              <td>Cancelled</td>
+              <td>M</td>
+              <td>20</td>
+              <td>3018</td>
+              <td>20180127</td>
+              <td>0</td>
+              <td>A232684</td>
+              <td>
+                  <div class="btn-group btn-group-xs">
+                      <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-file"></i></a>
+
+                      <a class="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+
+                        </a>
+                     
+                  </div>
+            
+              </td>
+          </tr>
+          <tr class="danger">
+              <td>123456789</td>
+              <td>123456789</td>
+              <td>Cancelled</td>
+              <td>M</td>
+              <td>20</td>
+              <td>3018</td>
+              <td>20180127</td>
+              <td>0</td>
+              <td>A232684</td>
+              <td>
+                  <div class="btn-group btn-group-xs">
+                      <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-file"></i></a>
+                      <a class="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                  </div>
+              </td>
+          </tr>
+          <tr class="success">
+              <td>123456789</td>
+              <td>123456789</td>
+              <td>Released</td>
+              <td>M</td>
+              <td>20</td>
+              <td>3018</td>
+              <td>20180127</td>
+              <td>0</td>
+              <td>A232684</td>
+              <td>
+                  <div class="btn-group btn-group-xs">
+                      <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-file"></i></a>
+                      <a class="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                  </div>
+              </td>
+          </tr>
+          <tr class="success">
+              <td>123456789</td>
+              <td>123456789</td>
+              <td>Released</td>
+              <td>M</td>
+              <td>20</td>
+              <td>3018</td>
+              <td>20180127</td>
+              <td>0</td>
+              <td>A232684</td>
+              <td>
+                  <div class="btn-group btn-group-xs">
+                      <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-file"></i></a>
+                      <a class="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>123456789</td>
+              <td>123456789</td>
+              <td>Cancel Pending</td>
+              <td>M</td>
+              <td>20</td>
+              <td>3018</td>
+              <td>20180127</td>
+              <td>0</td>
+              <td>A232684</td>
+              <td>
+                  <div class="btn-group btn-group-xs">
+                      <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-file"></i></a>
+                      <a class="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>123456789</td>
+              <td>123456789</td>
+              <td>Cancel Pending</td>
+              <td>M</td>
+              <td>20</td>
+              <td>3018</td>
+              <td>20180127</td>
+              <td>0</td>
+              <td>A232684</td>
+              <td>
+                  <div class="btn-group btn-group-xs">
+                      <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-file"></i></a>
+                      <a class="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                  </div>
+              </td>
+          </tr>
+          <tr class="success">
+              <td>123456789</td>
+              <td>123456789</td>
+              <td>Released</td>
+              <td>M</td>
+              <td>20</td>
+              <td>3018</td>
+              <td>20180127</td>
+              <td>0</td>
+              <td>A232684</td>
+              <td>
+                  <div class="btn-group btn-group-xs">
+                      <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-file"></i></a>
+                      <a class="btn btn-danger btn-sm">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                  </div>
+              </td>
+          </tr>
+
+      </table>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+<div class="modal-content">
+        <div class="modal-header">
+            
+            <h4 class="modal-title">
+                Transaction Cust Ref:
+                    <strong>080000594</strong>
+               
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <br>
+                    <table class="table table-striped table-hover responsive">
+                        <tr>
+                            <th>Status</th>
+                            <th>PC</th>
+                            <th>Prefix</th>
+                            <th>Part Number</th>
+                            <th>Description</th>
+                            <th>Order Qty</th>
+                            <th>Value</th>
+                          
+                            <th>User ID</th>
+                            <th>Req Date</th>
+                            <th>Cancel</th>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                            
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                          
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                           
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                      
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                        
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                    
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                         
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                 
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                            
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cancel pending </td>
+                            <td>M</td>
+                            <td>RT</td>
+                            <td>12346789</td>
+                            <td>COMPUTER</td>
+                            <td>12</td>
+                            <td>3000,50</td>
+                      
+                            <td>A232684</td>
+                            <td>20180127</td>
+                            <td>
+                                    <a class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                          </a>
+                            </td>
+                        </tr>
+                    </table>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</div>
